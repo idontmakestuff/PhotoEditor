@@ -1,0 +1,35 @@
+PhotoEditorScreen
+
+<PhotoEditorScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        GridLayout:
+            cols: 2
+            size_hint: 1,.3
+            TextInput:
+                hint_text:"image name (e.g. 'image.png)'"
+                id: imageload
+            Button:
+                text: "Load Image"
+                on_release: root.display_image(imageload.text)
+            Button:
+                text: "Two Tone"
+                on_release: root.two_tone()
+            Button:
+                text: "Pixelate"
+            Button:
+                text: "Sepia"
+                on_release: root.sepia()
+            Button:
+                text: "Pointillism"
+                on_release: root.pointillism()
+            Button:
+                text: "Mirror"
+                on_release: root.mirror()
+            Button:
+                text: "Invert"
+                on_release: root.invert()
+
+        Image:
+            id: image
+            source: ""
